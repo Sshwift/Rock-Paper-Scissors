@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55e-rj-TVB">
+                                <rect key="frame" x="7.5" y="323.5" width="75" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="👊"/>
+                                <connections>
+                                    <action selector="tapChoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWH-Kc-0qB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfF-az-2zF">
+                                <rect key="frame" x="122.5" y="323.5" width="75" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="✋"/>
+                                <connections>
+                                    <action selector="tapChoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D00-8d-pFO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK7-1U-yp5">
+                                <rect key="frame" x="237.5" y="323.5" width="75" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="✌️"/>
+                                <connections>
+                                    <action selector="tapChoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iXB-GS-9dN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rock, Paper, Scissors?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zBj-QF-Rdp">
+                                <rect key="frame" x="21" y="264.5" width="278" height="39"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9P-kj-L3X">
+                                <rect key="frame" x="122.5" y="160.5" width="75" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tr-3k-Qy8">
+                                <rect key="frame" x="70" y="439.5" width="180" height="50"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.97999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eaa-re-Q5k"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="ll2-ND-WwF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QQG-bV-4JB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GfF-az-2zF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Cd-I1-vrP"/>
+                            <constraint firstItem="zBj-QF-Rdp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="COT-cI-2Oh"/>
+                            <constraint firstItem="aK7-1U-yp5" firstAttribute="centerY" secondItem="55e-rj-TVB" secondAttribute="centerY" id="DDU-Ve-7da"/>
+                            <constraint firstItem="GfF-az-2zF" firstAttribute="top" secondItem="zBj-QF-Rdp" secondAttribute="bottom" constant="20" id="JbV-OR-wcS"/>
+                            <constraint firstItem="GfF-az-2zF" firstAttribute="leading" secondItem="55e-rj-TVB" secondAttribute="trailing" constant="40" id="Kl0-1B-Ixz"/>
+                            <constraint firstItem="2tr-3k-Qy8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Onh-Ya-fdU"/>
+                            <constraint firstItem="zBj-QF-Rdp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QUW-4B-Sc7"/>
+                            <constraint firstItem="zBj-QF-Rdp" firstAttribute="top" secondItem="E9P-kj-L3X" secondAttribute="bottom" constant="20" id="Vir-9a-xSV"/>
+                            <constraint firstItem="E9P-kj-L3X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jwb-De-FPV"/>
+                            <constraint firstItem="GfF-az-2zF" firstAttribute="centerY" secondItem="55e-rj-TVB" secondAttribute="centerY" id="om8-FE-NuL"/>
+                            <constraint firstItem="aK7-1U-yp5" firstAttribute="leading" secondItem="GfF-az-2zF" secondAttribute="trailing" constant="40" id="phr-3o-eYA"/>
+                            <constraint firstItem="2tr-3k-Qy8" firstAttribute="top" secondItem="GfF-az-2zF" secondAttribute="bottom" constant="20" id="yrk-NJ-zB7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainTextLabel" destination="zBj-QF-Rdp" id="QAM-Bq-dSE"/>
+                        <outlet property="playAgainButton" destination="2tr-3k-Qy8" id="kQP-s0-vcp"/>
+                        <outlet property="robotLabel" destination="E9P-kj-L3X" id="wp7-4x-wBf"/>
+                        <outletCollection property="choiseButton" destination="aK7-1U-yp5" collectionClass="NSMutableArray" id="RNz-fP-57j"/>
+                        <outletCollection property="choiseButton" destination="GfF-az-2zF" collectionClass="NSMutableArray" id="MGE-jX-3Yp"/>
+                        <outletCollection property="choiseButton" destination="55e-rj-TVB" collectionClass="NSMutableArray" id="4Pa-I9-oTW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
