@@ -4,7 +4,7 @@ class ViewController: UIViewController {
 
     @IBOutlet private weak var robotLabel: UILabel!
     @IBOutlet private weak var mainTextLabel: UILabel!
-    @IBOutlet private var choiseButton: [UIButton]!
+    @IBOutlet private var choiseButtons: [UIButton]!
     @IBOutlet private weak var playAgainButton: UIButton!
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let gameState = playerChoise.beat(sign: enemyChoise)
         setGameState(gameState: gameState)
         robotLabel.text = enemyChoise.emoji
-        for btn in choiseButton {
+        for btn in choiseButtons {
             if btn != button {
                 btn.isHidden = true
             } else if btn == button {
@@ -67,9 +67,23 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.backgroundColor = color
         }
-        for btn in choiseButton {
+        for btn in choiseButtons {
             btn.isEnabled = true
             btn.isHidden = false
+        }
+    }
+    
+    private func randomSign() -> Sign {
+        let randomInt = Int.random(in: 1...3)
+        switch randomInt {
+        case 1:
+            return Sign.papper
+        case 2:
+            return Sign.rock
+        case 3:
+            return Sign.scissors
+        default:
+            return Sign.papper
         }
     }
 }

@@ -1,19 +1,5 @@
 import Foundation
 
-func randomSign() -> Sign {
-    let randomInt = Int.random(in: 1...3)
-    switch randomInt {
-    case 1:
-        return Sign.papper
-    case 2:
-        return Sign.rock
-    case 3:
-        return Sign.scissors
-    default:
-        return Sign.papper
-    }
-}
-
 enum Sign {
     case papper, scissors, rock
     var emoji: String {

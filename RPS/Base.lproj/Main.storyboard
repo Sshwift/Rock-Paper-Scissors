@@ -95,9 +95,9 @@
                         <outlet property="mainTextLabel" destination="zBj-QF-Rdp" id="QAM-Bq-dSE"/>
                         <outlet property="playAgainButton" destination="2tr-3k-Qy8" id="kQP-s0-vcp"/>
                         <outlet property="robotLabel" destination="E9P-kj-L3X" id="wp7-4x-wBf"/>
-                        <outletCollection property="choiseButton" destination="aK7-1U-yp5" collectionClass="NSMutableArray" id="RNz-fP-57j"/>
-                        <outletCollection property="choiseButton" destination="GfF-az-2zF" collectionClass="NSMutableArray" id="MGE-jX-3Yp"/>
-                        <outletCollection property="choiseButton" destination="55e-rj-TVB" collectionClass="NSMutableArray" id="4Pa-I9-oTW"/>
+                        <outletCollection property="choiseButtons" destination="aK7-1U-yp5" collectionClass="NSMutableArray" id="RNz-fP-57j"/>
+                        <outletCollection property="choiseButtons" destination="GfF-az-2zF" collectionClass="NSMutableArray" id="MGE-jX-3Yp"/>
+                        <outletCollection property="choiseButtons" destination="55e-rj-TVB" collectionClass="NSMutableArray" id="4Pa-I9-oTW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
