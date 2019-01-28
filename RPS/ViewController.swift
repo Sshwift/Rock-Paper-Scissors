@@ -13,33 +13,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapChoise(_ sender: UIButton) {
-        switch sender.titleLabel?.text {
-        case "✋":
-            play(sign: .papper, button: sender)
-        case "👊":
-            play(sign: .rock, button: sender)
-        case "✌️":
-            play(sign: .scissors, button: sender)
-        default:
-            return
-        }
+        guard let buttonText = sender.titleLabel?.text else { return }
+        play(choise: buttonText)
     }
     
     @IBAction func playAgainTapped(_ sender: Any) {
         setGameState(gameState: .start)
     }
     
-    private func play(sign: Sign, button: UIButton) {
-        let playerChoise = sign
+    private func play(choise: String) {
+        let playerChoise = setSign(choise: choise)
         let enemyChoise = randomSign()
         let gameState = playerChoise.beat(sign: enemyChoise)
         setGameState(gameState: gameState)
         robotLabel.text = enemyChoise.emoji
         for btn in choiseButtons {
-            if btn != button {
-                btn.isHidden = true
-            } else if btn == button {
-                btn.isEnabled = false
+            let isTappedBtn = btn.titleLabel?.text == choise
+            btn.isHidden = !isTappedBtn
+            if isTappedBtn {
                 UIView.animate(withDuration: 0.5) {
                     self.view.layoutIfNeeded()
                     btn.center = CGPoint(x: self.view.center.x, y: btn.center.y)
@@ -51,21 +42,9 @@ class ViewController: UIViewController {
     private func setGameState(gameState: GameState) {
         robotLabel.text = "🤖"
         mainTextLabel.text = gameState.stateText
-        playAgainButton.isHidden = false
-        let color: UIColor
-        switch gameState {
-        case .draw:
-            color = UIColor.darkGray
-        case .lose:
-            color = UIColor.red
-        case .win:
-            color = UIColor.green
-        case .start:
-            color = UIColor.white
-            playAgainButton.isHidden = true
-        }
+        playAgainButton.isHidden = gameState == .start ? true : false
         UIView.animate(withDuration: 0.5) {
-            self.view.backgroundColor = color
+            self.view.backgroundColor = gameState.color
         }
         for btn in choiseButtons {
             btn.isEnabled = true
@@ -77,13 +56,26 @@ class ViewController: UIViewController {
         let randomInt = Int.random(in: 1...3)
         switch randomInt {
         case 1:
-            return Sign.papper
+            return Sign.paper
         case 2:
             return Sign.rock
         case 3:
             return Sign.scissors
         default:
-            return Sign.papper
+            return Sign.paper
+        }
+    }
+    
+    private func setSign(choise: String) -> Sign {
+        switch choise {
+        case "✋":
+            return .paper
+        case "👊":
+            return .rock
+        case "✌️":
+            return .scissors
+        default:
+            return .paper
         }
     }
 }

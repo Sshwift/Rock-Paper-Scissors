@@ -1,10 +1,11 @@
-import Foundation
+import UIKit
 
 enum Sign {
-    case papper, scissors, rock
+    case paper, scissors, rock
+    
     var emoji: String {
         switch self {
-        case .papper:
+        case .paper:
             return "✋"
         case .rock:
             return "👊"
@@ -12,15 +13,16 @@ enum Sign {
             return "✌️"
         }
     }
+    
     func beat(sign: Sign) -> GameState {
             switch self {
-            case .papper:
+            case .paper:
                 switch sign {
                 case .rock:
                     return .win
                 case .scissors:
                     return .lose
-                case .papper:
+                case .paper:
                     return .draw
                 }
             case .scissors:
@@ -29,7 +31,7 @@ enum Sign {
                     return .lose
                 case .scissors:
                     return .draw
-                case .papper:
+                case .paper:
                     return .win
                 }
             case .rock:
@@ -38,7 +40,7 @@ enum Sign {
                     return .draw
                 case .scissors:
                     return .win
-                case .papper:
+                case .paper:
                     return .lose
                 }
             }
@@ -47,10 +49,11 @@ enum Sign {
 
 enum GameState {
     case start, lose, win, draw
+    
     var stateText: String {
         switch self {
         case .start:
-            return "Rock, papper, scissors?"
+            return "Rock, paper, scissors?"
         case .lose:
             return "You lose!"
         case .win:
@@ -59,4 +62,18 @@ enum GameState {
             return "Draw!"
         }
     }
+    
+    var color: UIColor {
+        switch self {
+        case .draw:
+            return UIColor.darkGray
+        case .lose:
+            return UIColor.red
+        case .win:
+            return UIColor.green
+        case .start:
+            return UIColor.white
+        }
+    }
+    
 }
