@@ -19,18 +19,22 @@ class ViewController: UIViewController {
     
     @IBAction func playAgainTapped(_ sender: Any) {
         setGameState(gameState: .start)
+        for btn in choiseButtons {
+            btn.isEnabled = true
+            btn.isHidden = false
+        }
     }
     
     private func play(choise: String) {
         let playerChoise = setSign(choise: choise)
         let enemyChoise = randomSign()
         let gameState = playerChoise.beat(sign: enemyChoise)
-        setGameState(gameState: gameState)
-        robotLabel.text = enemyChoise.emoji
+        setGameState(gameState: gameState, robotChoise: enemyChoise.emoji)
         for btn in choiseButtons {
             let isTappedBtn = btn.titleLabel?.text == choise
             btn.isHidden = !isTappedBtn
             if isTappedBtn {
+                btn.isEnabled = false
                 UIView.animate(withDuration: 0.5) {
                     self.view.layoutIfNeeded()
                     btn.center = CGPoint(x: self.view.center.x, y: btn.center.y)
@@ -39,16 +43,12 @@ class ViewController: UIViewController {
         }
     }
     
-    private func setGameState(gameState: GameState) {
-        robotLabel.text = "🤖"
+    private func setGameState(gameState: GameState, robotChoise: String = "🤖") {
+        robotLabel.text = robotChoise
         mainTextLabel.text = gameState.stateText
         playAgainButton.isHidden = gameState == .start ? true : false
         UIView.animate(withDuration: 0.5) {
             self.view.backgroundColor = gameState.color
-        }
-        for btn in choiseButtons {
-            btn.isEnabled = true
-            btn.isHidden = false
         }
     }
     
